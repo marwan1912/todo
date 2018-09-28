@@ -98,11 +98,6 @@
                         password: $('#txtPassword').val(),
 
                     },
-                    // When the request completes successfully, save the
-                    // access token in the browser session storage and
-                    // redirect the user to Data.html page. We do not have
-                    // this page yet. So please add it to the
-                    // EmployeeService project before running it
                     success: function (response) {
                         var user = $('#txtEmail').val();
                         setCookie("username", user, 30);
