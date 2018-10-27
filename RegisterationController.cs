@@ -40,11 +40,13 @@ namespace WebApplication2.Controllers
                             if (user.Email == null)
                             {
                                 username1.Value = DBNull.Value;
+                                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Please enter a valid email address.");
                             }
                             SqlParameter username2 = cmd.Parameters.AddWithValue("@password", hash);
                             if (user.Password == null)
                             {
-                                username2.Value = DBNull.Value;
+                               username2.Value = DBNull.Value;
+                               return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Please enter a password.");
                             }
 
                             cnn.Open();
@@ -61,7 +63,7 @@ namespace WebApplication2.Controllers
 
             catch (Exception ex)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "This email is already being used by other user.");
             }
         }
 
