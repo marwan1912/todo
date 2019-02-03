@@ -3,4 +3,4 @@ o Designed and developed a ToDo List system using Azure, C#, WebAPI Controller, 
 
 o The system helps the users to organize their daily tasks, updates the percentage of completion for each task and delete the completed tasks.
 
-URL: https://marawanlist.azurewebsites.net/login.html
+URL: https://marawantodo.azurewebsites.net/login.html
